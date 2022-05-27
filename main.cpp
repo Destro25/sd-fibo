@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <vector>
 using namespace std;
 ifstream f("mergeheap.in");
@@ -36,6 +37,10 @@ public:
     void taiemarcat(nod *tata);
     void stergenod(nod *x);
     void scadeval(nod *x, int valnoua);
+    nod *getmaxim()
+    {
+        return maxim;
+    }
 };
 void heapfibonacci::stergedinlista(nod *x)
 {
@@ -121,10 +126,15 @@ void heapfibonacci::mutacopii(nod *copil)
 }
 int heapfibonacci::extragemaxim()
 {
-    nod *maxsters = izoleazamaxim();
-    int valoare = maxsters->val;
-    delete maxsters;
-    return valoare;
+    if(maxim != nullptr)
+    {
+        nod *maxsters = izoleazamaxim();
+        int valoare = maxsters->val;
+        delete maxsters;
+        return valoare;
+    }
+    cout << "Heap gol ";
+    return 0;
 }
 nod *heapfibonacci::izoleazamaxim()
 {
@@ -281,27 +291,28 @@ void heapfibonacci::scadeval(nod *x, int valnoua)
 }
 int main()
 {
-    int n, m, instr, heap, element;
-    f >> n >> m;
-    heapfibonacci heapuri[n+1];
-    for(int i = 0; i < m; i++)
-    {
-        f >> instr;
-        if(instr == 1)
-        {
-            f >> heap >> element;
-            heapuri[heap].insereazanod(element);
-        }
-        if(instr == 2)
-        {
-            f >> heap;
-            g << heapuri[heap].extragemaxim() << "\n";
-        }
-        if(instr == 3)
-        {
-            f >> heap >> element;
-            heapuri[heap].reuniuneheap(heapuri[element]);
-        }
-    }
+    heapfibonacci f;
+    heapfibonacci g;
+    f.insereazanod(17);
+    f.insereazanod(12);
+    f.insereazanod(9);
+    f.insereazanod(2);
+    g.insereazanod(121);
+    g.insereazanod(183);
+    g.insereazanod(340);
+    g.insereazanod(490);
+    cout << f.extragemaxim() << " ";
+    cout << f.extragemaxim() << " ";
+    f.reuniuneheap(g);
+    cout << f.extragemaxim() << " ";
+    f.scadeval(f.getmaxim(), -32);
+    cout << f.extragemaxim() << " ";
+    cout << f.extragemaxim() << " ";
+    cout << f.extragemaxim() << " ";
+    cout << f.extragemaxim() << " ";
+    f.stergenod(f.getmaxim());
+    cout << f.extragemaxim() << " ";
+
+
     return 0;
 }
