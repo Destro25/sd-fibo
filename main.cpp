@@ -291,27 +291,27 @@ void heapfibonacci::scadeval(nod *x, int valnoua)
 }
 int main()
 {
-    heapfibonacci f;
-    heapfibonacci g;
-    f.insereazanod(17);
-    f.insereazanod(12);
-    f.insereazanod(9);
-    f.insereazanod(2);
-    g.insereazanod(121);
-    g.insereazanod(183);
-    g.insereazanod(340);
-    g.insereazanod(490);
-    cout << f.extragemaxim() << " ";
-    cout << f.extragemaxim() << " ";
-    f.reuniuneheap(g);
-    cout << f.extragemaxim() << " ";
-    f.scadeval(f.getmaxim(), -32);
-    cout << f.extragemaxim() << " ";
-    cout << f.extragemaxim() << " ";
-    cout << f.extragemaxim() << " ";
-    cout << f.extragemaxim() << " ";
-    f.stergenod(f.getmaxim());
-    cout << f.extragemaxim() << " ";
+    heapfibonacci f1;
+    heapfibonacci g1;
+    f1.insereazanod(17);
+    f1.insereazanod(12);
+    f1.insereazanod(9);
+    f1.insereazanod(2);
+    g1.insereazanod(121);
+    g1.insereazanod(183);
+    g1.insereazanod(340);
+    g1.insereazanod(490);
+    cout << f1.extragemaxim() << " ";
+    cout << f1.extragemaxim() << " ";
+    f1.reuniuneheap(g1);
+    cout << f1.extragemaxim() << " ";
+    f1.scadeval(f1.getmaxim(), -32);
+    cout << f1.extragemaxim() << " ";
+    cout << f1.extragemaxim() << " ";
+    cout << f1.extragemaxim() << " ";
+    cout << f1.extragemaxim() << " ";
+    f1.stergenod(f1.getmaxim());
+    cout << f1.extragemaxim() << " ";
 
 
     return 0;
